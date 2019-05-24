@@ -1,0 +1,251 @@
+
+@charset "UTF-8";
+@import 'bootstrap.less';
+@import 'https://use.fontawesome.com/releases/v5.5.0/css/all.css';
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap';
+
+@primario: #003764;
+@secundario: #4482d0;
+@gris: #505050;
+
+body{
+  background: #fff; font-family: 'Open Sans', sans-serif; color: @gris; font-weight: normal; font-size: 14px; line-height: 24px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+}
+
+p, a{color: inherit;}
+:focus{outline: none;}
+a:hover{color: @secundario; text-decoration: none;}
+select, input, p, a:focus, a, button:focus {outline:0 !important;}
+a{&:link, &:visited, &:hover, &:active{text-decoration: none;}}
+h1,h2,h3,h4,h5,h6{margin: 0px;}
+
+.logo{
+    width: 164px; height: 60px; display: inline-block; background: url(../img/logo.png) no-repeat center center; text-indent: -9999px; margin: 0px 0px 0px; background-size: cover; vertical-align: middle;
+    a{width: 100%; height: 100%; display: block;}
+    span{display: none;}
+}
+
+h1{font-size: 30px;}
+h2{font-size: 26px;}
+h3{font-size: 20px;}
+h4{font-size: 18px;}
+h5{font-size: 24px;}
+h6{font-size: 16px;}
+
+header{
+  padding: 25px 0;
+}
+
+.btn-gral{
+    font-size: 13px; font-weight: bold; background: @primario; color: #fff; padding: 10px 20px; display: inline-block; border-radius: 5px; position: relative;
+    &:hover{background: #000; color: #fff;}
+}
+
+.caja-resultados{display: none;}
+
+/*FORMULARIOS*/
+@form-size: 13px;
+@inputHeight: 40px;
+@inputColor: @gris;
+@inputBorder: #ccc;
+
+label{color: #505050; font-size: 15px; font-weight: normal;}
+input, .select, textarea{
+    width: 100%; font-size: @form-size; font-weight: normal; margin-bottom: 15px; z-index: 1;
+    background: #fff; border: 1px solid @inputBorder;  color: @inputColor;
+}
+
+input, .select, select{ height: @inputHeight; }
+
+textarea, input{padding: 10px;}
+textarea{height: 250px; resize: none;}
+
+input[type="button"], input[type="submit"]{background: @primario; color: #fff;  padding: 0 24px; width: auto; border: none; font-weight: 600; text-transform: uppercase; border-radius: 5px;}
+input[type="button"]:hover, input[type="submit"]:hover{background: @secundario;}
+
+.select {
+    width: 100%; overflow: hidden; padding: 0px; position: relative;
+    select {background: transparent; width: 100%; padding: 0px 30px 0px 10px; border: 0; border-radius: 0; line-height: 1; -webkit-appearance: none; -moz-appearance: none; z-index: 1; position: relative;}
+
+    i{position: absolute; right: 11px; top: 50%; font-size: 13px; color: gray; transform: translateY(-50%);}
+}
+
+.error{background: #f66 !important; color: #fff !important;}
+.msg{display: none;}
+
+.tcenter{text-align: center;}
+
+.h10{height: 10px; clear: both; width: 100%;}
+.h20{height: 20px; clear: both; width: 100%;}
+.h30{height: 30px; clear: both; width: 100%;}
+.h40{height: 40px; clear: both; width: 100%;}
+.h50{height: 50px; clear: both; width: 100%;}
+.h60{height: 60px; clear: both; width: 100%;}
+
+.box{background: #fff1f2; border-radius: 5px; width: 100%; text-align: center; padding: 20px; min-height: 235px;}
+
+// Estilos File inputs
+
+.js .inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.inputfile + label {
+    max-width: 80%;
+    font-size: 1.25rem;
+    /* 20px */
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    padding: 0.625rem 1.25rem;
+    /* 10px 20px */
+}
+
+.no-js .inputfile + label {
+    display: none;
+}
+
+.inputfile:focus + label,
+.inputfile.has-focus + label {
+    outline: 1px dotted #000;
+    outline: -webkit-focus-ring-color auto 5px;
+}
+
+.inputfile + label * {
+    /* pointer-events: none; */
+    /* in case of FastClick lib use */
+}
+
+.inputfile + label svg {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    fill: currentColor;
+    margin-top: -0.25em;
+    /* 4px */
+    margin-right: 0.25em;
+    /* 4px */
+}
+
+/* style 5 */
+
+.inputfile-5 + label {
+    color: #d3394c;
+}
+
+.inputfile-5:focus + label,
+.inputfile-5.has-focus + label,
+.inputfile-5 + label:hover {
+    color: #722040;
+}
+
+.inputfile-5 + label figure {
+    width: 100px;
+    height: 135px;
+    background-color: #d3394c;
+    display: block;
+    position: relative;
+    padding: 30px;
+    margin: 0 auto 10px;
+}
+
+.inputfile-5:focus + label figure,
+.inputfile-5.has-focus + label figure,
+.inputfile-5 + label:hover figure {
+    background-color: #722040;
+}
+
+.inputfile-5 + label figure::before,
+.inputfile-5 + label figure::after {
+    width: 0;
+    height: 0;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.inputfile-5 + label figure::before {
+    border-top: 20px solid #fff1f2;
+    border-left: 20px solid transparent;
+}
+
+.inputfile-5 + label figure::after {
+    border-bottom: 20px solid #722040;
+    border-right: 20px solid transparent;
+}
+
+.inputfile-5:focus + label figure::after,
+.inputfile-5.has-focus + label figure::after,
+.inputfile-5 + label:hover figure::after {
+    border-bottom-color: #d3394c;
+}
+
+.inputfile-5 + label svg {
+    width: 100%;
+    height: 100%;
+    fill: #f1e5e6;
+}
+
+
+
+
+.inputfile-1 + label {
+    color: #d3394c;
+}
+
+.inputfile-1 + label {
+    border: 1px solid #d3394c;
+    background-color: #f1e5e6;
+    padding: 0;
+}
+
+.inputfile-1:focus + label,
+.inputfile-1.has-focus + label,
+.inputfile-1 + label:hover {
+    border-color: #722040;
+}
+
+.inputfile-1 + label span,
+.inputfile-1 + label strong {
+    padding: 0.625rem 1.25rem;
+    /* 10px 20px */
+}
+
+.inputfile-1 + label span {
+    width: 200px;
+    min-height: 2em;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: top;
+}
+
+.inputfile-1 + label strong {
+    height: 100%;
+    color: #f1e5e6;
+    background-color: #d3394c;
+    display: inline-block;
+}
+
+.inputfile-1:focus + label strong,
+.inputfile-1.has-focus + label strong,
+.inputfile-1 + label:hover strong {
+    background-color: #722040;
+}
+
+@media screen and (max-width: 50em) {
+    .inputfile-1 + label strong {
+        display: block;
+    }
+}
+
