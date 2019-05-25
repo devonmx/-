@@ -1,0 +1,143 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>Calculador de salarios</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="icon.png">
+    <!-- Favicon -->
+    <link href="icon.png" rel="icon" type="image/x-icon" />
+    <link href="icon.png" rel="shortcut icon" />
+    <!-- Place icon.ico in the root directory -->
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/fixedheader/3.1.5/css/fixedHeader.dataTables.min.css">
+    <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+    <!--[if IE]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+    <![endif]-->
+    <header>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 tcenter">
+                    <div class="logo"><a href="javascript:;"></a></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 tcenter">
+                <h1>Descripción detallada de operaciones</h1>
+            </div>
+            <div class="h20"></div>
+            <div id="test-result">
+
+                <h3><strong>El Proceso:</strong></h3>
+                <div class="h20"></div>
+                <p">El lectura del archivo <strong>equipos.json</strong>, <strong>salarios.json</strong> y <strong>salarios_completos.json</strong> las operaciones se procesan unicamente con los archivos <strong>equipos.json</strong> y <strong>salarios.json</strong> el resultado obtenido se compara con el archivo <strong>salarios_completos.json</strong> por lo tanto el <strong>resultado procesado</strong> comparado con el <strong>archivo json</strong> indica que los resultados son <strong class="tsecundario json-equal"></strong></p>
+
+                <div class="h40"></div>
+
+                <h3><strong>Metas Individuales</strong></h3>
+                <div class="h20"></div>
+                <ul class="metas-individuales"></ul>
+                
+                <div class="h40"></div>
+
+                <h3><strong>Metas Grupales</strong></h3>
+                <div class="h20"></div>
+                <strong>Con la información obtenenida anteriormente obtuvimos los siguientes datos:</strong>
+                <ul class="metas-grupales"></ul>
+
+                <div class="h40"></div>
+
+                <h3><strong>Resultados finales</strong></h3>
+                <div class="h20"></div>
+                <ul class="metas-bonos"></ul>
+
+            </div>
+            <div class="h50"></div>
+            <div class="col-sm-12">
+                <div class="caja-resultados">
+                    <div class="tcenter">
+                        <h1>Resultados</h1>
+                    </div>
+                    <div class="h30"></div>
+
+                    <table id="tabla">
+                        <thead>
+                            <tr>
+                                <th>Equipo</th>
+                                <th>Jugador</th>
+                                <th>Min. Goles</th>
+                                <th>G. Anotados</th>
+                                <th>Sueldo Base</th>
+                                <th>Bono Máx</th>
+                                <th>Sueldo Completo</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+
+                    <div class="h40"></div>
+
+                    <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+                        <div class="tcenter">
+                            <label><strong>Salarios completos JSON:</strong></label>
+
+                            <div class="h20"></div>
+
+                            <div class="descargar-archivo tcenter"></div>
+
+                            <div class="h30"></div>
+
+                            <textarea id="resultado"></textarea>
+
+                            <div class="h40"></div>
+                            <a href="./" class="btn-gral secundario refrescar">Realizar otra prueba</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 tcenter">
+                    <p>Resuelve tu Deuda ® Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="ajaxBusy"><img src="img/load.gif"></div>
+    <!-- Requeridos -->
+    <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
+    <script>var module = [];</script>
+    <!-- Pop Notifications -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+    <!-- Table Sorter -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.1/js/jquery.tablesorter.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.1/js/jquery.tablesorter.widgets.min.js"></script>
+    <!-- MAIN FILES -->
+    <script src="js/plugins.js"></script>
+    <script src="js/test.js"></script>
+</body>
+
+</html>

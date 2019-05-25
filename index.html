@@ -16,7 +16,8 @@
 
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
-
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/fixedheader/3.1.5/css/fixedHeader.dataTables.min.css">
     <meta name="theme-color" content="#fafafa">
 </head>
 
@@ -37,7 +38,7 @@
     <div class="container">
         <div class="row">
             <div class="h30"></div>
-            <div class="col-md-8 col-md-offset-2 col-sm-6">
+            <div id="main-box" class="col-md-8 col-md-offset-2 col-sm-12">
                 <form class="row">
                     <div class="col-sm-6 tcenter">
                         <label><strong>Equipo y metas de goles</strong><br/> Subir archivo JSON</label>
@@ -67,26 +68,74 @@
             </div>
 
             <div class="clearfix"></div>
-            
-            <div class="caja-resultados">
-                <div class="col-sm-8 col-sm-offset-2 col-sm-12">
-                    <label><strong>Salarios completos:</strong></label>
-                </div>
-                <div class="col-md-4 col-md-offset-2 col-sm-6">
-                    <textarea id="resultado"></textarea>
-                </div>
-                <div class="col-sm-4 descargar-archivo">
+            <div class="col-sm-12">
+                <div class="caja-resultados">
+                    <div class="tcenter">
+                        <h1>Resultados</h1>
+                    </div>
+                    <div class="h30"></div>
+
+                    <table id="tabla">
+                        <thead>
+                            <tr>
+                                <th>Equipo</th>
+                                <th>Jugador</th>
+                                <th>Min. Goles</th>
+                                <th>G. Anotados</th>
+                                <th>Sueldo Base</th>
+                                <th>Bono Máx</th>
+                                <th>Sueldo Completo</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+
+                    <div class="h40"></div>
+
+                    <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+                        <div class="tcenter">
+                            <label><strong>Salarios completos JSON:</strong></label>
+
+                            <div class="h20"></div>
+
+                            <div class="descargar-archivo tcenter"></div>
+
+                            <div class="h30"></div>
+
+                            <textarea id="resultado"></textarea>
+
+                            <div class="h40"></div>
+                            <a href="./" class="btn-gral secundario refrescar">Realizar otra prueba</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 tcenter">
+                    <p>Resuelve tu Deuda ® Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="ajaxBusy"><img src="img/load.gif"></div>
+    <!-- Requeridos -->
     <script src="js/vendor/modernizr-3.7.1.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
     <script>var module = [];</script>
+    <!-- Pop Notifications -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+    <!-- Table Sorter -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.1/js/jquery.tablesorter.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.1/js/jquery.tablesorter.widgets.min.js"></script>
+    <!-- MAIN FILES -->
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
 

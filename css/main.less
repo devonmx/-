@@ -6,8 +6,9 @@
 
 @primario: #003764;
 @secundario: #4482d0;
-@gris: #505050;
+@gris: #606c76;
 
+// GENERALES
 body{
   background: #fff; font-family: 'Open Sans', sans-serif; color: @gris; font-weight: normal; font-size: 14px; line-height: 24px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
 }
@@ -32,16 +33,52 @@ h4{font-size: 18px;}
 h5{font-size: 24px;}
 h6{font-size: 16px;}
 
-header{
-  padding: 25px 0;
+
+// Front 
+header{padding: 25px 0; }
+footer{
+    padding: 25px 0; text-align: center;
+    p{font-size: 10px; margin-bottom: 0px;}
 }
 
+.tcenter{text-align: center;}
+
+.h10{height: 10px; clear: both; width: 100%;}
+.h20{height: 20px; clear: both; width: 100%;}
+.h30{height: 30px; clear: both; width: 100%;}
+.h40{height: 40px; clear: both; width: 100%;}
+.h50{height: 50px; clear: both; width: 100%;}
+.h60{height: 60px; clear: both; width: 100%;}
+
+.tsecundario{color: @secundario;}
+.capital{text-transform: capitalize;}
 .btn-gral{
     font-size: 13px; font-weight: bold; background: @primario; color: #fff; padding: 10px 20px; display: inline-block; border-radius: 5px; position: relative;
+
+    &.secundario{background: @secundario;}
     &:hover{background: #000; color: #fff;}
 }
 
-.caja-resultados{display: none;}
+.caja-resultados{
+    display: none; overflow: hidden;border-radius: 5px; padding: 30px;
+    background: #f9f9f9; 
+}
+
+.box{background: #fff1f2; border-radius: 5px; width: 100%; text-align: center; padding: 20px; min-height: 235px;}
+
+table {border-spacing: 0; width: 100%; border-radius: 10px 10px 0 0; border-radius: 10px; overflow: hidden; background: #fff;}
+thead{background: #003764;}
+th{color: #fff;}
+// td:first-child, th:first-child {padding-left: 0;}
+td, th {border-bottom: 0.1rem solid #e1e1e1; padding: 1.2rem 1.5rem; text-align: left;}
+tr td:first-child{text-transform: capitalize;}
+tr:last-child td{border-bottom: none;}
+tbody tr:hover{background: #f5f5f5;}
+
+#ajaxBusy{
+    display: none; position: fixed; top: 0px; left: 0px; height: 100%; width: 100%; background-color: #fff; text-align: center; z-index: 99; 
+    img{padding-top: 17%;}
+}
 
 /*FORMULARIOS*/
 @form-size: 13px;
@@ -49,7 +86,7 @@ header{
 @inputColor: @gris;
 @inputBorder: #ccc;
 
-label{color: #505050; font-size: 15px; font-weight: normal;}
+label{color: @gris; font-size: 15px; font-weight: normal;}
 input, .select, textarea{
     width: 100%; font-size: @form-size; font-weight: normal; margin-bottom: 15px; z-index: 1;
     background: #fff; border: 1px solid @inputBorder;  color: @inputColor;
@@ -73,175 +110,36 @@ input[type="button"]:hover, input[type="submit"]:hover{background: @secundario;}
 .error{background: #f66 !important; color: #fff !important;}
 .msg{display: none;}
 
-.tcenter{text-align: center;}
-
-.h10{height: 10px; clear: both; width: 100%;}
-.h20{height: 20px; clear: both; width: 100%;}
-.h30{height: 30px; clear: both; width: 100%;}
-.h40{height: 40px; clear: both; width: 100%;}
-.h50{height: 50px; clear: both; width: 100%;}
-.h60{height: 60px; clear: both; width: 100%;}
-
-.box{background: #fff1f2; border-radius: 5px; width: 100%; text-align: center; padding: 20px; min-height: 235px;}
-
 // Estilos File inputs
-
-.js .inputfile {
-    width: 0.1px;
-    height: 0.1px;
-    opacity: 0;
-    overflow: hidden;
-    position: absolute;
-    z-index: -1;
-}
-
-.inputfile + label {
-    max-width: 80%;
-    font-size: 1.25rem;
-    /* 20px */
-    font-weight: 700;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    cursor: pointer;
-    display: inline-block;
-    overflow: hidden;
-    padding: 0.625rem 1.25rem;
-    /* 10px 20px */
-}
-
-.no-js .inputfile + label {
-    display: none;
-}
-
-.inputfile:focus + label,
-.inputfile.has-focus + label {
-    outline: 1px dotted #000;
-    outline: -webkit-focus-ring-color auto 5px;
-}
-
-.inputfile + label * {
-    /* pointer-events: none; */
-    /* in case of FastClick lib use */
-}
-
-.inputfile + label svg {
-    width: 1em;
-    height: 1em;
-    vertical-align: middle;
-    fill: currentColor;
-    margin-top: -0.25em;
-    /* 4px */
-    margin-right: 0.25em;
-    /* 4px */
-}
+.js .inputfile {width: 0.1px; height: 0.1px; opacity: 0; overflow: hidden; position: absolute; z-index: -1; }
+.inputfile + label {max-width: 80%; font-size: 1.25rem; /* 20px */ font-weight: 700; text-overflow: ellipsis; white-space: nowrap; cursor: pointer; display: inline-block; overflow: hidden; padding: 0.625rem 1.25rem; /* 10px 20px */ }
+.no-js .inputfile + label {display: none; }
+.inputfile:focus + label, .inputfile.has-focus + label {outline: 1px dotted #000; outline: -webkit-focus-ring-color auto 5px; }
+.inputfile + label * {/* pointer-events: none; */ /* in case of FastClick lib use */ }
+.inputfile + label svg {width: 1em; height: 1em; vertical-align: middle; fill: currentColor; margin-top: -0.25em; /* 4px */ margin-right: 0.25em; /* 4px */ }
 
 /* style 5 */
+.inputfile-5 + label {color: #d3394c; }
+.inputfile-5:focus + label, .inputfile-5.has-focus + label, .inputfile-5 + label:hover {color: #722040; }
+.inputfile-5 + label figure {width: 100px; height: 135px; background-color: #d3394c; display: block; position: relative; padding: 30px; margin: 0 auto 10px; }
+.inputfile-5:focus + label figure, .inputfile-5.has-focus + label figure, .inputfile-5 + label:hover figure {background-color: #722040; }
+.inputfile-5 + label figure::before, .inputfile-5 + label figure::after {width: 0; height: 0; content: ''; position: absolute; top: 0; right: 0; }
+.inputfile-5 + label figure::before {border-top: 20px solid #fff1f2; border-left: 20px solid transparent; }
+.inputfile-5 + label figure::after {border-bottom: 20px solid #722040; border-right: 20px solid transparent; }
+.inputfile-5:focus + label figure::after, .inputfile-5.has-focus + label figure::after, .inputfile-5 + label:hover figure::after {border-bottom-color: #d3394c; }
+.inputfile-5 + label svg {width: 100%; height: 100%; fill: #f1e5e6; }
+.inputfile-1 + label {color: #d3394c; }
+.inputfile-1 + label {border: 1px solid #d3394c; background-color: #f1e5e6; padding: 0; }
+.inputfile-1:focus + label, .inputfile-1.has-focus + label, .inputfile-1 + label:hover {border-color: #722040; }
+.inputfile-1 + label span, .inputfile-1 + label strong {padding: 0.625rem 1.25rem; /* 10px 20px */ }
+.inputfile-1 + label span {width: 200px; min-height: 2em; display: inline-block; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; vertical-align: top; }
+.inputfile-1 + label strong {height: 100%; color: #f1e5e6; background-color: #d3394c; display: inline-block; }
+.inputfile-1:focus + label strong, .inputfile-1.has-focus + label strong, .inputfile-1 + label:hover strong {background-color: #722040; }
 
-.inputfile-5 + label {
-    color: #d3394c;
-}
-
-.inputfile-5:focus + label,
-.inputfile-5.has-focus + label,
-.inputfile-5 + label:hover {
-    color: #722040;
-}
-
-.inputfile-5 + label figure {
-    width: 100px;
-    height: 135px;
-    background-color: #d3394c;
-    display: block;
-    position: relative;
-    padding: 30px;
-    margin: 0 auto 10px;
-}
-
-.inputfile-5:focus + label figure,
-.inputfile-5.has-focus + label figure,
-.inputfile-5 + label:hover figure {
-    background-color: #722040;
-}
-
-.inputfile-5 + label figure::before,
-.inputfile-5 + label figure::after {
-    width: 0;
-    height: 0;
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-
-.inputfile-5 + label figure::before {
-    border-top: 20px solid #fff1f2;
-    border-left: 20px solid transparent;
-}
-
-.inputfile-5 + label figure::after {
-    border-bottom: 20px solid #722040;
-    border-right: 20px solid transparent;
-}
-
-.inputfile-5:focus + label figure::after,
-.inputfile-5.has-focus + label figure::after,
-.inputfile-5 + label:hover figure::after {
-    border-bottom-color: #d3394c;
-}
-
-.inputfile-5 + label svg {
-    width: 100%;
-    height: 100%;
-    fill: #f1e5e6;
-}
-
-
-
-
-.inputfile-1 + label {
-    color: #d3394c;
-}
-
-.inputfile-1 + label {
-    border: 1px solid #d3394c;
-    background-color: #f1e5e6;
-    padding: 0;
-}
-
-.inputfile-1:focus + label,
-.inputfile-1.has-focus + label,
-.inputfile-1 + label:hover {
-    border-color: #722040;
-}
-
-.inputfile-1 + label span,
-.inputfile-1 + label strong {
-    padding: 0.625rem 1.25rem;
-    /* 10px 20px */
-}
-
-.inputfile-1 + label span {
-    width: 200px;
-    min-height: 2em;
-    display: inline-block;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    vertical-align: top;
-}
-
-.inputfile-1 + label strong {
-    height: 100%;
-    color: #f1e5e6;
-    background-color: #d3394c;
-    display: inline-block;
-}
-
-.inputfile-1:focus + label strong,
-.inputfile-1.has-focus + label strong,
-.inputfile-1 + label:hover strong {
-    background-color: #722040;
-}
+// Filtros de la tabla
+.tablesorter .header, .tablesorter .tablesorter-header {background-image: url(data:image/gif;base64,R0lGODlhFQAJAIAAAP///////yH5BAEAAAEALAAAAAAVAAkAAAIXjI+AywnaYnhUMoqt3gZXPmVg94yJVQAAOw==); background-repeat: no-repeat; background-position: center right; white-space: normal; cursor: pointer; }
+.tablesorter .headerSortUp, .tablesorter .tablesorter-headerSortUp, .tablesorter .tablesorter-headerAsc {background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAAP///////yH5BAEAAAEALAAAAAAVAAQAAAINjI8Bya2wnINUMopZAQA7); }
+.tablesorter .headerSortDown, .tablesorter .tablesorter-headerSortDown, .tablesorter .tablesorter-headerDesc {background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAAP///////yH5BAEAAAEALAAAAAAVAAQAAAINjB+gC+jP2ptn0WskLQA7); }
 
 @media screen and (max-width: 50em) {
     .inputfile-1 + label strong {
@@ -249,3 +147,13 @@ input[type="button"]:hover, input[type="submit"]:hover{background: @secundario;}
     }
 }
 
+/* SOLO TABLETS */
+@media (min-width: 768px) and (max-width: 979px) {
+    table {font-size: 12px;}
+}   
+
+/* SOLO MOBIL */
+@media (min-width: 300px) and (max-width: 767px) {
+    #header-main .menu-main li {height: 50px; line-height: 50px;}
+    #header-main .menu-main li a:first-child {font-size: 20px;}
+}
