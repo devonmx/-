@@ -101,18 +101,9 @@ $(document).ready(function(){
 			currency: 'USD',
 		});
 
-		// Ordenamos el array por Equipos
-		function compare( a, b ) {
-			if ( a.equipo < b.equipo ){
-				return -1;
-			}
-			if ( a.equipo > b.equipo ){
-				return 1;
-			}
-			return 0;
+		if(salarios != undefined){
+			salarios.sort(compare);
 		}
-
-		salarios.sort(compare);
 
 
 		// Validamos la salida del JSON 
@@ -176,4 +167,15 @@ function validaSalida(str) {
 		return false;
 	}
 	return true;
+}
+
+// Ordenamos el array por Equipos
+function compare( a, b ) {
+	if ( a.equipo < b.equipo ){
+		return -1;
+	}
+	if ( a.equipo > b.equipo ){
+		return 1;
+	}
+	return 0;
 }
