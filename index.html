@@ -48,74 +48,74 @@
         </div>
         <div class="row justify-content-center px-5">
           <div class="col justify-content-center">
-            <div id='dice1' class="dice dice-one">
-              <div id="cube1">
-                <div class="front"></div>
-                <div class="back"></div>
-                <div class="right"></div>
-                <div class="left"></div>
-                <div class="top"></div>
-                <div class="bottom"></div>
+            <div class="dice">
+              <div id="cube1" class="cube">
+                <div class="face front"></div>
+                <div class="face back"></div>
+                <div class="face right"></div>
+                <div class="face left"></div>
+                <div class="face top"></div>
+                <div class="face bottom"></div>
               </div>
             </div>
           </div>
           <div class="col justify-content-center">
-            <div id='dice2' class="dice dice-two">
-              <div id="cube2">
-                <div class="front"></div>
-                <div class="back"></div>
-                <div class="right"></div>
-                <div class="left"></div>
-                <div class="top"></div>
-                <div class="bottom"></div>
+            <div class="dice">
+              <div id="cube2" class="cube">
+                <div class="face front"></div>
+                <div class="face back"></div>
+                <div class="face right"></div>
+                <div class="face left"></div>
+                <div class="face top"></div>
+                <div class="face bottom"></div>
               </div>
             </div>
           </div>
           <div class="col justify-content-center">
-            <div id='dice3' class="dice dice-three">
-              <div id="cube3">
-                <div class="front"></div>
-                <div class="back"></div>
-                <div class="right"></div>
-                <div class="left"></div>
-                <div class="top"></div>
-                <div class="bottom"></div>
+            <div class="dice">
+              <div id="cube3" class="cube">
+                <div class="face front"></div>
+                <div class="face back"></div>
+                <div class="face right"></div>
+                <div class="face left"></div>
+                <div class="face top"></div>
+                <div class="face bottom"></div>
               </div>
             </div>
           </div>
           <div class="col justify-content-center">
-            <div id='dice4' class="dice dice-four">
-              <div id="cube4">
-                <div class="front"></div>
-                <div class="back"></div>
-                <div class="right"></div>
-                <div class="left"></div>
-                <div class="top"></div>
-                <div class="bottom"></div>
+            <div class="dice">
+              <div id="cube4" class="cube">
+                <div class="face front"></div>
+                <div class="face back"></div>
+                <div class="face right"></div>
+                <div class="face left"></div>
+                <div class="face top"></div>
+                <div class="face bottom"></div>
               </div>
             </div>
           </div>
           <div class="col justify-content-center">
-            <div id='dice5' class="dice dice-five">
-              <div id="cube5">
-                <div class="front"></div>
-                <div class="back"></div>
-                <div class="right"></div>
-                <div class="left"></div>
-                <div class="top"></div>
-                <div class="bottom"></div>
+            <div class="dice">
+              <div id="cube5" class="cube">
+                <div class="face front"></div>
+                <div class="face back"></div>
+                <div class="face right"></div>
+                <div class="face left"></div>
+                <div class="face top"></div>
+                <div class="face bottom"></div>
               </div>
             </div>
           </div>
           <div class="col justify-content-center">
-            <div id='dice6' class="dice dice-six">
-              <div id="cube6">
-                <div class="front"></div>
-                <div class="back"></div>
-                <div class="right"></div>
-                <div class="left"></div>
-                <div class="top"></div>
-                <div class="bottom"></div>
+            <div class="dice">
+              <div id="cube6" class="cube">
+                <div class="face front"></div>
+                <div class="face back"></div>
+                <div class="face right"></div>
+                <div class="face left"></div>
+                <div class="face top"></div>
+                <div class="face bottom"></div>
               </div>
             </div>
           </div>
@@ -151,12 +151,30 @@
 
     <!-- Optional JavaScript -->
     <script>
-      var dices = ['cube1','cube2','cube3','cube4','cube5', 'cube6']
       var roll = document.getElementById('roll'), min = 6, max = 30;
-      
+
+      var basic = [{name: 'cube1', prefix: 'B1-', color: '#fff'}, {name: 'cube2', prefix: 'B1-', color: '#fff'}, {name: 'cube3', prefix: 'B2-', color: '#fff'}, {name: 'cube4', prefix: 'B3-', color: '#fff'}]
+      var river = [{name: 'cube5', prefix: 'R', color: '#0395CB'}, {name: 'cube6', prefix: 'R', color: '#0395CB'}]
+      var lake = [{name: 'cube5', prefix: 'R', color: '#0395CB'}, {name: 'cube6', prefix: 'R', color: '#0395CB'}]
+      var forest = [{name: 'cube5', prefix: 'F', color: '#0395CB'}, {name: 'cube6', prefix: 'F', color: '#0395CB'}]
+      var trail = [{name: 'cube5', prefix: 'T', color: '#0395CB'}, {name: 'cube6', prefix: 'T', color: '#0395CB'}]
+      var volcano = [{name: 'cube5', prefix: 'V', color: '#0395CB'}, {name: 'cube6', prefix: 'V', color: '#0395CB'}]
+      var meteorite = [{name: 'cube5', prefix: 'M1-', color: '#0395CB'}, {name: 'cube6', prefix: 'M2-', color: '#0395CB'}]
+      var desert = [{name: 'cube5', prefix: 'D1-', color: '#0395CB'}, {name: 'cube6', prefix: 'D2-', color: '#0395CB'}]
+      var canyon = [{name: 'cube5', prefix: 'C', color: '#0395CB'}, {name: 'cube6', prefix: 'C', color: '#0395CB'}]
+      var faces = ["front", "back", "right", "left", "top", "bottom"]
+      var dices = basic.concat(river);
+
+      dices.forEach(function(item, index, array) {
+        var cube = document.getElementById(item.name);  
+        faces.forEach(function(face, index, array) {
+          cube.getElementsByClassName(face)[0].setAttribute("style", "background-image: url(img/dice/"+item.prefix + (index + 1) + ".png);background-color: " + item.color + ";");
+        })
+      })
+
       roll.onclick = function() {
         dices.forEach(function(item, index, array) {
-          var cube = document.getElementById(item);
+          var cube = document.getElementById(item.name);
           var xRand = getRandom(max, min);
           var yRand = getRandom(max, min);
 
