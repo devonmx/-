@@ -1,0 +1,719 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+body {
+	background: url("../img/bg.jpg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;
+}
+
+html, body {
+	height: 100%;
+  margin: 0;
+}
+
+.wrapper {
+	min-height: 100%;
+	margin-bottom: -50px;
+}
+
+.footer, .push {
+	height: 50px;
+	font-size: 10pt;
+	text-align: center;
+}
+
+.logo {
+	height: 75px;
+	width: auto;
+}
+
+.dice-slot, .objectives-slot {
+	background-color: rgba(17, 107, 36, 0.2);
+	border-radius: 5px;
+	border-color: black;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Container) */
+.modal-content {
+  margin: auto;
+  display: block;
+	position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+	max-width: 700px;
+  background-color: rgba(0,0,0,0);
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+/* Modal Image */
+.modal-img {
+  border-radius: 8px;
+  object-fit: scale-down;
+  width: 100%;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: white;
+  padding: 10px 0;
+	font-family: 'ralewayregular';
+}
+
+@keyframes zoom {
+	from {transform:translate(-50%, -100%)}
+  to {transform:translate(-50%, -50%)}
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 90%;
+  }
+}
+
+.label {
+	color: white;
+	background: #17872f;
+	padding: 8px 16px;
+	border-radius: 24px;
+	font-family: 'oswaldregular';
+	font-weight: 400;
+	font-style: normal;
+}
+
+.descr {
+	font-style: italic;
+	font-size: 11pt;
+	font-family: 'ralewayregular';
+	color: darkslategrey;
+	text-align: center;
+}
+
+.button {
+   background: #f76939;
+   padding: 12px 30px;
+   border-radius: 4px;
+   color: #fff;
+   cursor: pointer;
+	 font-weight: bold;
+	 font-family: 'ralewayregular';
+}
+
+.objs:hover {
+  cursor: pointer;
+}
+
+.objs {
+	border-radius: 8px;
+	-webkit-filter: drop-shadow(0px 0px 2px rgba(0,0,0,0.4));
+}
+
+#roll:hover {
+  cursor: pointer;
+	background: #d6592f;
+}
+
+#roll:active {
+	background: #bf4921;
+}
+
+/*
+------------------------------------
+------------- DIE 1 ---------------
+------------------------------------
+*/
+
+#cube1 .front {
+	background-image: url("../img/dice/B1-1.png");
+  background-color: #fff;
+	background-size: cover;
+	background-repeat: no-repeat;
+  transform:
+    translateZ(40px);
+}
+
+#cube1 .back {
+	background-image: url("../img/dice/B1-2.png");
+  background-color: #fff;
+	background-size: cover;
+	background-repeat: no-repeat;
+  transform:
+    rotateX(-180deg)
+    translateZ(40px);
+}
+
+#cube1 .right {
+	background-image: url("../img/dice/B1-3.png");
+  background-color: #fff;
+	background-size: cover;
+	background-repeat: no-repeat;
+  transform:
+    rotateY(90deg)
+    translateZ(40px);
+}
+
+#cube1 .left {
+	background-image: url("../img/dice/B1-4.png");
+  background-color: #fff;
+	background-size: cover;
+	background-repeat: no-repeat;
+  transform:
+    rotateY(-90deg)
+    translateZ(40px);
+}
+
+#cube1 .top {
+	background-image: url("../img/dice/B1-5.png");
+  background-color: #fff;
+	background-size: cover;
+	background-repeat: no-repeat;
+  transform:
+    rotateX(90deg)
+    translateZ(40px);
+}
+
+#cube1 .bottom {
+	background-image: url("../img/dice/B1-6.png");
+  background-color: #fff;
+	background-size: cover;
+	background-repeat: no-repeat;
+  transform:
+    rotateX(-90deg)
+    translateZ(40px);
+}
+
+#cube1 {
+  width: 100%;
+  height: 100%;
+  top: 20px;
+  position: absolute;
+
+  transform-style: preserve-3d;
+  transition: transform 3s;
+}
+
+#cube1 div {
+  display: block;
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border: 2px solid #000000;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+.dice-one {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  margin: 0 auto 40px;
+
+  perspective: 1000px;
+  perspective-origin: 50% 100%;
+}
+
+/*
+------------------------------------
+------------- DIE 2 ---------------
+------------------------------------
+*/
+
+#cube2 .front {
+	background-image: url("../img/dice/B1-1.png");
+  background-color: #fff;
+	background-size: cover;
+	background-repeat: no-repeat;
+  transform:
+    translateZ(40px);
+}
+
+#cube2 .back {
+	background-image: url("../img/dice/B1-2.png");
+  background-color: #fff;
+	background-size: cover;
+	background-repeat: no-repeat;
+  transform:
+    rotateX(-180deg)
+    translateZ(40px);
+}
+
+#cube2 .right {
+	background-image: url("../img/dice/B1-3.png");
+  background-color: #fff;
+	background-size: cover;
+	background-repeat: no-repeat;
+  transform:
+    rotateY(90deg)
+    translateZ(40px);
+}
+
+#cube2 .left {
+	background-image: url("../img/dice/B1-4.png");
+  background-color: #fff;
+	background-size: cover;
+	background-repeat: no-repeat;
+  transform:
+    rotateY(-90deg)
+    translateZ(40px);
+}
+
+#cube2 .top {
+	background-image: url("../img/dice/B1-5.png");
+  background-color: #fff;
+	background-size: cover;
+	background-repeat: no-repeat;
+  transform:
+    rotateX(90deg)
+    translateZ(40px);
+}
+
+#cube2 .bottom {
+	background-image: url("../img/dice/B1-6.png");
+  background-color: #fff;
+	background-size: cover;
+	background-repeat: no-repeat;
+  transform:
+    rotateX(-90deg)
+    translateZ(40px);
+}
+
+#cube2 {
+  width: 100%;
+  height: 100%;
+  top: 20px;
+  position: absolute;
+
+  transform-style: preserve-3d;
+
+  transition: transform 3s;
+}
+
+#cube2 div {
+  display: block;
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border: 2px solid #000000;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.dice-two {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  margin: 0 auto 40px;
+
+  perspective: 1000px;
+  perspective-origin: 50% 100%;
+}
+
+/*
+------------------------------------
+------------- DIE 3 ---------------
+------------------------------------
+*/
+
+#cube3 .front {
+	background-image: url("../img/dice/B2-1.png");
+  background-color: #fff;
+	background-size: cover;
+	background-repeat: no-repeat;
+  transform:
+    translateZ(40px);
+}
+
+#cube3 .back {
+	background-image: url("../img/dice/B2-2.png");
+  background-color: #fff;
+	background-size: cover;
+	background-repeat: no-repeat;
+  transform:
+    rotateX(-180deg)
+    translateZ(40px);
+}
+
+#cube3 .right {
+	background-image: url("../img/dice/B2-3.png");
+  background-color: #fff;
+	background-size: cover;
+	background-repeat: no-repeat;
+  transform:
+    rotateY(90deg)
+    translateZ(40px);
+}
+
+#cube3 .left {
+	background-image: url("../img/dice/B2-4.png");
+  background-color: #fff;
+	background-size: cover;
+	background-repeat: no-repeat;
+  transform:
+    rotateY(-90deg)
+    translateZ(40px);
+}
+
+#cube3 .top {
+	background-image: url("../img/dice/B2-5.png");
+  background-color: #fff;
+	background-size: cover;
+	background-repeat: no-repeat;
+  transform:
+    rotateX(90deg)
+    translateZ(40px);
+}
+
+#cube3 .bottom {
+	background-image: url("../img/dice/B2-6.png");
+  background-color: #fff;
+	background-size: cover;
+	background-repeat: no-repeat;
+  transform:
+    rotateX(-90deg)
+    translateZ(40px);
+}
+
+#cube3 {
+  width: 100%;
+  height: 100%;
+  top: 20px;
+  position: absolute;
+
+  transform-style: preserve-3d;
+
+  transition: transform 3s;
+}
+
+#cube3 div {
+  display: block;
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border: 2px solid #000000;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.dice-three {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  margin: 0 auto 40px;
+
+  perspective: 1000px;
+  perspective-origin: 50% 100%;
+}
+
+/*
+------------------------------------
+------------- DIE 4 ---------------
+------------------------------------
+*/
+
+#cube4 .front {
+	background-image: url("../img/dice/B3-1.png");
+  background-color: #fff;
+	background-size: cover;
+	background-repeat: no-repeat;
+  transform:
+    translateZ(40px);
+}
+
+#cube4 .back {
+	background-image: url("../img/dice/B3-2.png");
+  background-color: #fff;
+	background-size: cover;
+	background-repeat: no-repeat;
+  transform:
+    rotateX(-180deg)
+    translateZ(40px);
+}
+
+#cube4 .right {
+	background-image: url("../img/dice/B3-3.png");
+  background-color: #fff;
+	background-size: cover;
+	background-repeat: no-repeat;
+  transform:
+    rotateY(90deg)
+    translateZ(40px);
+}
+
+#cube4 .left {
+	background-image: url("../img/dice/B3-4.png");
+  background-color: #fff;
+	background-size: cover;
+	background-repeat: no-repeat;
+  transform:
+    rotateY(-90deg)
+    translateZ(40px);
+}
+
+#cube4 .top {
+	background-image: url("../img/dice/B3-5.png");
+  background-color: #fff;
+	background-size: cover;
+	background-repeat: no-repeat;
+  transform:
+    rotateX(90deg)
+    translateZ(40px);
+}
+
+#cube4 .bottom {
+	background-image: url("../img/dice/B3-6.png");
+  background-color: #fff;
+	background-size: cover;
+	background-repeat: no-repeat;
+  transform:
+    rotateX(-90deg)
+    translateZ(40px);
+}
+
+#cube4 {
+  width: 100%;
+  height: 100%;
+  top: 20px;
+  position: absolute;
+
+  transform-style: preserve-3d;
+
+  transition: transform 3s;
+}
+
+#cube4 div {
+  display: block;
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border: 2px solid #000000;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.dice-four {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  margin: 0 auto 40px;
+
+  perspective: 1000px;
+  perspective-origin: 50% 100%;
+}
+
+/*
+------------------------------------
+------------- DIE 5 ---------------
+------------------------------------
+*/
+
+#cube5 .front {
+	background-image: url("../img/dice/R1.png");
+  background-color: #0395CB;
+	background-size: cover;
+	background-repeat: no-repeat;
+  transform:
+    translateZ(40px);
+}
+
+#cube5 .back {
+	background-image: url("../img/dice/R2.png");
+  background-color: #0395CB;
+	background-size: cover;
+	background-repeat: no-repeat;
+  transform:
+    rotateX(-180deg)
+    translateZ(40px);
+}
+
+#cube5 .right {
+	background-image: url("../img/dice/R3.png");
+  background-color: #0395CB;
+	background-size: cover;
+	background-repeat: no-repeat;
+  transform:
+    rotateY(90deg)
+    translateZ(40px);
+}
+
+#cube5 .left {
+	background-image: url("../img/dice/R4.png");
+  background-color: #0395CB;
+	background-size: cover;
+	background-repeat: no-repeat;
+  transform:
+    rotateY(-90deg)
+    translateZ(40px);
+}
+
+#cube5 .top {
+	background-image: url("../img/dice/R5.png");
+  background-color: #0395CB;
+	background-size: cover;
+	background-repeat: no-repeat;
+  transform:
+    rotateX(90deg)
+    translateZ(40px);
+}
+
+#cube5 .bottom {
+	background-image: url("../img/dice/R6.png");
+  background-color: #0395CB;
+	background-size: cover;
+	background-repeat: no-repeat;
+  transform:
+    rotateX(-90deg)
+    translateZ(40px);
+}
+
+#cube5 {
+  width: 100%;
+  height: 100%;
+  top: 20px;
+  position: absolute;
+
+  transform-style: preserve-3d;
+
+  transition: transform 3s;
+}
+
+#cube5 div {
+  display: block;
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border: 2px solid #000000;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.dice-five {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  margin: 0 auto 40px;
+
+  perspective: 1000px;
+  perspective-origin: 50% 100%;
+}
+
+/*
+------------------------------------
+------------- DIE 6 ---------------
+------------------------------------
+*/
+
+#cube6 .front {
+	background-image: url("../img/dice/R1.png");
+  background-color: #0395CB;
+	background-size: cover;
+	background-repeat: no-repeat;
+  transform:
+    translateZ(40px);
+}
+
+#cube6 .back {
+	background-image: url("../img/dice/R2.png");
+  background-color: #0395CB;
+	background-size: cover;
+	background-repeat: no-repeat;
+  transform:
+    rotateX(-180deg)
+    translateZ(40px);
+}
+
+#cube6 .right {
+	background-image: url("../img/dice/R3.png");
+  background-color: #0395CB;
+	background-size: cover;
+	background-repeat: no-repeat;
+  transform:
+    rotateY(90deg)
+    translateZ(40px);
+}
+
+#cube6 .left {
+	background-image: url("../img/dice/R4.png");
+  background-color: #0395CB;
+	background-size: cover;
+	background-repeat: no-repeat;
+  transform:
+    rotateY(-90deg)
+    translateZ(40px);
+}
+
+#cube6 .top {
+	background-image: url("../img/dice/R5.png");
+  background-color: #0395CB;
+	background-size: cover;
+	background-repeat: no-repeat;
+  transform:
+    rotateX(90deg)
+    translateZ(40px);
+}
+
+#cube6 .bottom {
+	background-image: url("../img/dice/R6.png");
+  background-color: #0395CB;
+	background-size: cover;
+	background-repeat: no-repeat;
+  transform:
+    rotateX(-90deg)
+    translateZ(40px);
+}
+
+#cube6 {
+  width: 100%;
+  height: 100%;
+  top: 20px;
+  position: absolute;
+
+  transform-style: preserve-3d;
+
+  transition: transform 3s;
+}
+
+#cube6 div {
+  display: block;
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border: 2px solid #000000;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.dice-six {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  margin: 0 auto 40px;
+
+  perspective: 1000px;
+  perspective-origin: 50% 100%;
+}
