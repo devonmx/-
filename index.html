@@ -1,209 +1,308 @@
-
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/styles.css" />
-    <title>Railroad Ink Dice App</title>
-  </head>
-  <body>
-    <!-- Modal -->
-    <div id="myModal" class="modal">
-      <div class="container modal-content">
-        <div class="row" align="center">
-          <div class="col" align="center">
-            <!-- Modal Content (The Image) -->
-            <img class="modal-img img-responsive fit-image" id="img01">
-          </div>
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/styles.css" />
+  <title>Railroad Ink Dice App</title>
+</head>
+
+<body>
+  <!-- Modal -->
+  <div id="myModal" class="modal">
+    <div class="container modal-content">
+      <div class="row" align="center">
+        <div class="col" align="center">
+          <!-- Modal Content (The Image) -->
+          <img class="modal-img img-responsive fit-image" id="img01">
         </div>
-        <div class="row" align="center">
-          <div class="col" align="center">
-            <!-- Modal Caption (Image Text) -->
-            <div id="caption"></div>
-          </div>
+      </div>
+      <div class="row" align="center">
+        <div class="col" align="center">
+          <!-- Modal Caption (Image Text) -->
+          <div id="caption"></div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Main Body -->
-    <div class="container wrapper pt-3">
-      <div class="container pb-3">
-        <div class="row justify-content-center pb-3">
-          <a href="https://www.horribleguild.com/"><img src="img/horrible-guild-logo.png" class="img-fluid logo"/></a>
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-sm-5" align="center">
-            <img src="img/rri_logo.png" class="img-fluid product">
-          </div>
+  <!-- Main Body -->
+  <div class="container wrapper pt-3">
+    <div class="container pb-3">
+      <div class="row justify-content-center pb-3">
+        <a href="https://www.horribleguild.com/"><img src="img/horrible-guild-logo.png" class="img-fluid logo" /></a>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-sm-5" align="center">
+          <img src="img/rri_logo.png" class="img-fluid product">
         </div>
       </div>
-      <div class="container border border-secondary dice-slot">
-        <div class="row justify-content-center pt-3">
-          <div class="label">Route Dice</div>
-        </div>
-        <div class="row justify-content-center px-5">
-          <div class="col justify-content-center">
-            <div id='dice1' class="dice dice-one">
-              <div id="cube1">
-                <div class="front"></div>
-                <div class="back"></div>
-                <div class="right"></div>
-                <div class="left"></div>
-                <div class="top"></div>
-                <div class="bottom"></div>
-              </div>
-            </div>
-          </div>
-          <div class="col justify-content-center">
-            <div id='dice2' class="dice dice-two">
-              <div id="cube2">
-                <div class="front"></div>
-                <div class="back"></div>
-                <div class="right"></div>
-                <div class="left"></div>
-                <div class="top"></div>
-                <div class="bottom"></div>
-              </div>
-            </div>
-          </div>
-          <div class="col justify-content-center">
-            <div id='dice3' class="dice dice-three">
-              <div id="cube3">
-                <div class="front"></div>
-                <div class="back"></div>
-                <div class="right"></div>
-                <div class="left"></div>
-                <div class="top"></div>
-                <div class="bottom"></div>
-              </div>
-            </div>
-          </div>
-          <div class="col justify-content-center">
-            <div id='dice4' class="dice dice-four">
-              <div id="cube4">
-                <div class="front"></div>
-                <div class="back"></div>
-                <div class="right"></div>
-                <div class="left"></div>
-                <div class="top"></div>
-                <div class="bottom"></div>
-              </div>
-            </div>
-          </div>
-          <div class="col justify-content-center">
-            <div id='dice5' class="dice dice-five">
-              <div id="cube5">
-                <div class="front"></div>
-                <div class="back"></div>
-                <div class="right"></div>
-                <div class="left"></div>
-                <div class="top"></div>
-                <div class="bottom"></div>
-              </div>
-            </div>
-          </div>
-          <div class="col justify-content-center">
-            <div id='dice6' class="dice dice-six">
-              <div id="cube6">
-                <div class="front"></div>
-                <div class="back"></div>
-                <div class="right"></div>
-                <div class="left"></div>
-                <div class="top"></div>
-                <div class="bottom"></div>
-              </div>
-            </div>
-          </div>
-        </div>
+    </div>
+    <div class="container border border-secondary dice-slot">
+      <div class="row justify-content-center pt-3">
+        <!-- <div class="label">Select Expansión</div> -->
+        <select id="expansion" onchange="setUp()" class="label">
+          <option value="Basic" selected>Select Expansion</option>
+          <option value="Basic">Básic</option>
+          <option value="River">(Blue) River</option>
+          <option value="Lake">(Blue) Lake</option>
+          <option value="Volcano">(Red) Volcano</option>
+          <option value="Meteorite">(Red) Meteorite</option>
+          <option value="Forest">(Green) Forest</option>
+          <option value="Trail">(Green) Trail</option>
+          <option value="Desert">(Yellow) Desert</option>
+          <option value="Canyon">(Yellow) Canyon</option>
+        </select>
+      </div>
+      <div id="table" class="row justify-content-center px-5">
+      </div>
       <div class="row justify-content-center pb-3">
         <div class="button border border-danger" id="roll">Roll Dice</div>
       </div>
+    </div>
+    <div class="container border border-secondary objectives-slot my-3 py-3">
+      <div class="row justify-content-center pb-2">
+        <div class="label">Goal Cards</div>
       </div>
-      <div class="container border border-secondary objectives-slot my-3 py-3">
-        <div class="row justify-content-center pb-2">
-          <div class="label">Goal Cards</div>
+      <div class="row">
+        <div class="col" align="center">
+          <img src="img/objetives/B.png" class="img-fluid objs py-1" id="obj1"
+            alt=" Trigger the effect of at least 3 Villages by drawing a Station Route inside their space.">
         </div>
-        <div class="row">
-          <div class="col" align="center">
-            <img src="img/objetives/B.png" class="img-fluid objs py-1" id="obj1" alt=" Trigger the effect of at least 3 Villages by drawing a Station Route inside their space.">
-          </div>
-          <div class="col" align="center">
-            <img src="img/objetives/A.png" class="img-fluid objs py-1" id="obj2" alt="Draw at least 5 spaces in the central area of your board.">
-          </div>
-          <div class="col" align="center">
-            <img src="img/objetives/L.png" class="img-fluid objs py-1" id="obj3" alt="Build a railway at least 6 spaces long.">
-          </div>
+        <div class="col" align="center">
+          <img src="img/objetives/A.png" class="img-fluid objs py-1" id="obj2"
+            alt="Draw at least 5 spaces in the central area of your board.">
         </div>
-        <div class="row justify-content-center pt-1">
-          <div class="descr">Click on a card to view it in detail.</div>
+        <div class="col" align="center">
+          <img src="img/objetives/L.png" class="img-fluid objs py-1" id="obj3"
+            alt="Build a railway at least 6 spaces long.">
         </div>
+      </div>
+      <div class="row justify-content-center pt-1">
+        <div class="descr">Click on a card to view it in detail.</div>
+      </div>
     </div>
     <div class="push"></div>
-    </div>
-    <footer class="footer pt-3 pb-1">
-        © <script>document.write(new Date().getFullYear())</script> Horrible Games S.r.l. | <a href="https://www.horribleguild.com/privacy" style="color:darkslategrey">Privacy &amp; cookie policy</a>
-    </footer>
+  </div>
+  <footer class="footer pt-3 pb-1">
+    ©
+    <script>document.write(new Date().getFullYear())</script> Horrible Games S.r.l. | <a
+      href="https://www.horribleguild.com/privacy" style="color:darkslategrey">Privacy &amp; cookie policy</a>
+  </footer>
 
-    <!-- Optional JavaScript -->
-    <script>
-      var dices = ['cube1','cube2','cube3','cube4','cube5', 'cube6']
-      var roll = document.getElementById('roll'), min = 6, max = 30;
-      
-      roll.onclick = function() {
-        dices.forEach(function(item, index, array) {
-          var cube = document.getElementById(item);
-          var xRand = getRandom(max, min);
-          var yRand = getRandom(max, min);
+  <!-- Optional JavaScript -->
+  <script>
+    window.onload = setUp;
+    var tableSpace = document.getElementById('table');
+    var roll = document.getElementById('roll'), min = 6, max = 30, dices = [], goals = [];
+    var basic = [{ prefix: 'B1-', color: '#fff' }, { prefix: 'B1-', color: '#fff' }, { prefix: 'B2-', color: '#fff' }, { prefix: 'B3-', color: '#fff' }];
+    var river = [{ prefix: 'R', color: '#006292' }, { prefix: 'R', color: '#006292' }];
+    var lake = [{ prefix: 'L', color: '#ACE4FF' }, { prefix: 'L', color: '#ACE4FF' }];
+    var forest = [{ prefix: 'F', color: '#00682C' }, { prefix: 'F', color: '#00682C' }];
+    var trail = [{ prefix: 'T', color: '#80B53D' }, { prefix: 'T', color: '#80B53D' }];
+    var volcano = [{ prefix: 'V', color: '#F5A029' }, { prefix: 'V', color: '#F5A029' }];
+    var meteorite = [{ prefix: 'M1-', color: '#B65843' }, { prefix: 'M2-', color: '#B65843' }];
+    var desert = [{ prefix: 'D1-', color: '#F2CF63' }, { prefix: 'D2-', color: '#F2CF63' }];
+    var canyon = [{ prefix: 'C', color: '#FCB615' }, { prefix: 'C', color: '#FCB615' }];
+    var faces = ["front", "back", "right", "left", "top", "bottom"];
+    
+    var basicGoals = [{ goal: "A", description: "Dibuja cualquier cosa en al menos 5 de los espacios centrales de tu tablero (los espacios no necesitan estar conectados entre sí, solo en el área central)." },
+    { goal: "B", description: "Activa 3 aldeas dibujando una estación dentro de sus espacios." },
+    { goal: "C", description: "Dibuja cualquier cosa en todos los espacios de una sola fila o columna de tu tablero (los espacios no necesitan estar conectados entre sí, solo en la misma fila / columna)." },
+    { goal: "D", description: "Dibuja cualquier cosa en al menos 3 de los espacios de las esquinas de tu tablero." },
+    { goal: "E", description: "Dibuja cualquier cosa en todos los espacios de un área de 3x3 en tu tablero (los espacios no necesitan estar conectados entre sí, solo en la misma área de 3x3)." },
+    { goal: "F", description: "Crea una ruta circular que comience y termine en el mismo punto." },
+    { goal: "G", description: "Conecte al menos 4 salidas a la misma red." },
+    { goal: "H", description: "Conecte al menos 4 estaciones a la misma red." },
+    { goal: "I", description: "Dibuja una carretera con una longitud de al menos 6." },
+    { goal: "J", description: "Dibuja un ferrocarril con una longitud de al menos 6." },
+    { goal: "K", description: "Conecte al menos 2 salidas en los lados opuestos del tablero entre sí." },
+    { goal: "L", description: "Conecte al menos 2 salidas en el medio de su lado del tablero entre sí." }]
+    var forestGoals = [{ goal: "FA", description: "Dibuja al menos 5 bosques separados (se pueden fusionar después de lograr este objetivo)." },
+    { goal: "FB", description: "Dibuja una racha ininterrumpida de 4 espacios adyacentes en diagonal con Árboles adentro." },
+    { goal: "FC", description: "Dibuja árboles en al menos 4 espacios adyacentes a las salidas." }]
+    var trailGoals = [{ goal: "TA", description: "Dibuja senderos en 5 espacios adyacentes en la misma fila o columna (los espacios no necesitan estar conectados entre sí, solo adyacentes)." },
+    { goal: "TB", description: "Conecte al menos 3 senderos a la misma estación." },
+    { goal: "TC", description: "Dibuja senderos en 5 espacios en el área central de tu tablero (los espacios no necesitan estar conectados entre sí, solo en el área central)." }]
+    var desertGoals = [{ goal: "DA", description: "Dibuja cactus en todos los espacios de un área de 2x2 en tu tablero (los espacios no necesitan estar conectados entre sí, solo en la misma área de 2x2)." },
+    { goal: "DB", description: "Dibuja cactus en al menos 4 espacios adyacentes en una sola fila o columna de tu tablero (los espacios no necesitan estar conectados entre sí, solo en la misma fila / columna)." },
+    { goal: "DC", description: "Conecte al menos 3 espacios que contengan un Oasis a la misma red." }]
+    var canyonGoals = [{ goal: "CA", description: "Gasta al menos 6 puntos de puente." },
+    { goal: "CB", description: "Cruza el mismo Cañón 3 veces con el mismo camino." },
+    { goal: "CD", description: "Dibuja un Cañón con ambos extremos conectados al borde del tablero que también pasa por el Área Central de tu tablero." }]
+    var riverGoals = [{ goal: "RA", description: "Tener una Ruta que cruce dos veces el mismo río." },
+    { goal: "RB", description: "Tener 3 estaciones adyacentes ortogonalmente a los espacios del río." },
+    { goal: "RC", description: "Conecta 2 salidas con una ruta que pasa por un río." }]
+    var lakeGoals = [{ goal: "LA", description: "Tiene 2 salidas conectadas a través de un lago." },
+    { goal: "LB", description: "Tenga 4 espacios de lago en la misma fila o columna." },
+    { goal: "LC", description: "Tener un lago sin bordes rectos." }]
+    var volcanoGoals = [{ goal: "VA", description: "Tener una ruta en bucle alrededor de 4 y un volcán." },
+    { goal: "VB", description: "Conecta 2 salidas a través de un espacio que tenga lava." },
+    { goal: "VC", description: "Haz que Lava destruya 1 de tus rutas." }]
+    var meteoriteGoals = [{ goal: "MA", description: "Tener un cráter con rutas en los 4 espacios adyacentes." },
+    { goal: "MB", description: "Conecta 2 cráteres con una ruta." },
+    { goal: "MC", description: "Haz que un cráter destruya una ruta." }]
 
-          cube.style.webkitTransform = 'rotateX('+xRand+'deg) rotateY('+yRand+'deg)';
-          cube.style.transform = 'rotateX('+xRand+'deg) rotateY('+yRand+'deg)';
-        })
+    document.getElementById('expansion').onchange = function () {
+      setUp();
+    };
+
+    roll.onclick = function () {
+      dices.forEach(function (item, index, array) {
+        var id = index + 1;
+        var cube = document.getElementById("cube" + id);
+        var xRand = getRandom(max, min);
+        var yRand = getRandom(max, min);
+
+        cube.style.webkitTransform = 'rotateX(' + xRand + 'deg) rotateY(' + yRand + 'deg)';
+        cube.style.transform = 'rotateX(' + xRand + 'deg) rotateY(' + yRand + 'deg)';
+      })
+    }
+
+    function setUp() {
+      tableSpace.innerHTML = '';
+      var expansion = document.getElementById('expansion').value;
+      switch (expansion) {
+        case 'River':
+          dices = basic.concat(river);
+          getGoals(riverGoals, true);
+          break;
+        case 'Lake':
+          dices = basic.concat(lake);
+          getGoals(lakeGoals, true);
+          break;
+        case 'Forest':
+          dices = basic.concat(forest);
+          getGoals(forestGoals, true);
+          break;
+        case 'Trail':
+          dices = basic.concat(trail);
+          getGoals(trailGoals, true);
+          break;
+        case 'Volcano':
+          dices = basic.concat(volcano);
+          getGoals(volcanoGoals, true);
+          break;
+        case 'Meteorite':
+          dices = basic.concat(meteorite);
+          getGoals(meteoriteGoals, true);
+          break;
+        case 'Desert':
+          dices = basic.concat(desert);
+          getGoals(desertGoals, true);
+          break;
+        case 'Canyon':
+          dices = basic.concat(canyon);
+          getGoals(canyonGoals, true);
+          break;
+        default:
+          dices = basic;
+          getGoals(basicGoals, false);
+          break;
+      }
+      createTable();
+    }
+
+    function createTable() {
+      dices.forEach(function (item, index, array) {
+        var die = `
+            <div class="col justify-content-center">
+              <div class="dice">
+                <div id="cube${index + 1}" class="cube">
+                  <div class="face front"></div>
+                  <div class="face back"></div>
+                  <div class="face right"></div>
+                  <div class="face left"></div>
+                  <div class="face top"></div>
+                  <div class="face bottom"></div>
+                </div>
+              </div>
+            </div>
+          `;
+
+        tableSpace.innerHTML = tableSpace.innerHTML + die;
+        customizeDice(item, index + 1);
+      })
+    }
+
+    function customizeDice(dice, id) {
+      var cube = document.getElementById('cube' + id);
+      faces.forEach(function (face, index, array) {
+        cube.getElementsByClassName(face)[0].setAttribute("style", "background-image: url(img/dice/" + dice.prefix + (index + 1) + ".png);background-color: " + dice.color + ";");
+      })
+    }
+
+    function getRandom(max, min) {
+      return (Math.floor(Math.random() * (max - min)) + min) * 90;
+    }
+
+    function getGoals(expansionGoals, expansion) {
+      goals = []
+      if(expansion){
+        var basGoals = basicGoals.sort(() => Math.random() - 0.5);
+        var expGoals = expansionGoals.sort(() => Math.random() - 0.5);
+        goals.push(basGoals[0], basGoals[1], expGoals[0])
+      }else{
+        var basGoals = basicGoals.sort(() => Math.random() - 0.5);
+        goals.push(basGoals[0], basGoals[2], basGoals[3])
       }
 
-      function getRandom(max, min) {
-        return (Math.floor(Math.random() * (max-min)) + min) * 90;
-      }
+      document.getElementById("obj1").src = 'img/objetives/' + goals[0].goal + ".png";
+      document.getElementById("obj1").alt = goals[0].description;
+      document.getElementById("obj2").src = 'img/objetives/' + goals[1].goal + ".png";
+      document.getElementById("obj2").alt = goals[1].description;
+      document.getElementById("obj3").src = 'img/objetives/' + goals[2].goal + ".png";
+      document.getElementById("obj3").alt = goals[2].description;
+    }
 
-      // Get the modal
-      var modal = document.getElementById("myModal");
+    // Get the modal
+    var modal = document.getElementById("myModal");
 
-      // Get the image and insert it inside the modal - use its "alt" text as a caption
-      var img1 = document.getElementById("obj1");
-      var img2 = document.getElementById("obj2");
-      var img3 = document.getElementById("obj3");
-      var modalImg = document.getElementById("img01");
-      var captionText = document.getElementById("caption");
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img1 = document.getElementById("obj1");
+    var img2 = document.getElementById("obj2");
+    var img3 = document.getElementById("obj3");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
 
-      img1.onclick = function(){
-        modal.style.display = "block";
-        modalImg.src = this.src;
-        captionText.innerHTML = this.alt;
-      }
+    img1.onclick = function () {
+      modal.style.display = "block";
+      modalImg.src = this.src;
+      captionText.innerHTML = this.alt;
+    }
 
-      img2.onclick = function(){
-        modal.style.display = "block";
-        modalImg.src = this.src;
-        captionText.innerHTML = this.alt;
-      }
+    img2.onclick = function () {
+      modal.style.display = "block";
+      modalImg.src = this.src;
+      captionText.innerHTML = this.alt;
+    }
 
-      img3.onclick = function(){
-        modal.style.display = "block";
-        modalImg.src = this.src;
-        captionText.innerHTML = this.alt;
-      }
+    img3.onclick = function () {
+      modal.style.display = "block";
+      modalImg.src = this.src;
+      captionText.innerHTML = this.alt;
+    }
 
-      modal.onclick = function() {
-        modal.style.display = "none";
-      }
-    </script>
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  </body>
+    modal.onclick = function () {
+      modal.style.display = "none";
+    }
+  </script>
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
