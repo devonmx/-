@@ -1,0 +1,109 @@
+A
+Draw anything in at least 5 of the Central Spaces of your2 4b6 o8 ard (the spaces don’t need to be connected to each other, just in the Central Area).
+B
+Activate 3 Villages by drawing a Station inside their spaces.
+C
+Draw anything in all of the spaces of a single row or column of your board (the spaces don’t need to be connected to each other, just in the same row/column).
+D
+Draw anything in at least 3 of the corner spaces of your board.
+E
+Draw anything in all of the spaces of a 3x3 area on your board (the spaces don’t need to be connected to each other, just in the same 3x3 area).
+F
+Create a circular path that starts and ends at the same point.
+G
+Connectat least 4 Exits to the same network.
+H
+Connect at least 4 Stations to the same network.
+I
+Draw a Highway with a length of at least 6.
+J
+Draw a Railway with a length of at least 6.
+K
+Connect at least 2 Exits on the opposite sides of the board to each other.
+L
+Connect at least 2 Exits in the middle of their side of the board to each other.
+FA
+Draw at least 5 separate Forests (they can be merged after you achieved this Goal).
+FB
+Draw an uninterrupted streak of 4 diagonally adjacent spaces with Trees inside.
+FC
+Draw Trees in at least 4 spaces adjacent to Exits.
+TA
+Draw Trails in 5 adjacent spaces on the same row or column (the spaces don’t need to be connected to each other, just adjacent).
+TB
+Connect at least 3 Trails to the same Station.
+TC
+Draw Trails in 5 spaces in the Central Area of your board (the spaces don’t need to be connected to each other, just in the Central Area).
+DA
+Draw Cacti in all of the spaces of a 2x2 area on your board (the spaces don’t need to be connected to each other, just in the same 2x2 area).
+DB
+Draw Cacti in at least 4 adjacent spaces in a single row or column of your board (the spaces don’t need to be connected to each other, just in the same row/column).
+DC
+Connect at least 3 spaces containing an Oasis to the same network.
+CA
+Spend at least 6 Bridge points.
+CB
+Cross the same Canyon 3 times with the same path.
+CD
+Draw a Canyon with both ends connected to the edge of the board that also goes through the Central Area of your board.
+RA
+Have a Route that crosses over the same River twice. 
+RB
+Have 3 Stations orthogonally adjacent to River spaces.
+RC
+Connect 2 Exits with a Route that goes over a River.
+LA
+Have 2 Exits connected through a Lake.
+LB
+Have 4 Lake spaces in the same row or column.
+LC
+Have a Lake with no straight edges.
+VA
+Have a Route looping aro4 und a Volcano.
+VB
+Connect 2 Exits through a space that has Lava in it.
+VC
+Have Lava destroy 1 of your Routes.
+MA
+Have a Crater with Routes on all 4 adjacent spaces. 
+MB
+Connect 2 Craters with a Route.
+MC
+Have a Route destroyed by a Crater.
+
+[{objetive: "A", description: "Dibuja cualquier cosa en al menos 5 de los espacios centrales de tu tablero (los espacios no necesitan estar conectados entre sí, solo en el área central)."},
+{objetive: "B", description: "Activa 3 aldeas dibujando una estación dentro de sus espacios."},
+{objetive: "C", description: "Dibuja cualquier cosa en todos los espacios de una sola fila o columna de tu tablero (los espacios no necesitan estar conectados entre sí, solo en la misma fila / columna)."},
+{objetive: "D", description: "Dibuja cualquier cosa en al menos 3 de los espacios de las esquinas de tu tablero."},
+{objetive: "E", description: "Dibuja cualquier cosa en todos los espacios de un área de 3x3 en tu tablero (los espacios no necesitan estar conectados entre sí, solo en la misma área de 3x3)."},
+{objetive: "F", description: "Crea una ruta circular que comience y termine en el mismo punto."},
+{objetive: "G", description: "Conecte al menos 4 salidas a la misma red."},
+{objetive: "H", description: "Conecte al menos 4 estaciones a la misma red."},
+{objetive: "I", description: "Dibuja una carretera con una longitud de al menos 6."},
+{objetive: "J", description: "Dibuja un ferrocarril con una longitud de al menos 6."},
+{objetive: "K", description: "Conecte al menos 2 salidas en los lados opuestos del tablero entre sí."},
+{objetive: "L", description: "Conecte al menos 2 salidas en el medio de su lado del tablero entre sí."},
+{objetive: "FA", description: "Dibuja al menos 5 bosques separados (se pueden fusionar después de lograr este objetivo)."},
+{objetive: "FB", description: "Dibuja una racha ininterrumpida de 4 espacios adyacentes en diagonal con Árboles adentro."},
+{objetive: "FC", description: "Dibuja árboles en al menos 4 espacios adyacentes a las salidas."},
+{objetive: "TA", description: "Dibuja senderos en 5 espacios adyacentes en la misma fila o columna (los espacios no necesitan estar conectados entre sí, solo adyacentes)."},
+{objetive: "TB", description: "Conecte al menos 3 senderos a la misma estación."},
+{objetive: "TC", description: "Dibuja senderos en 5 espacios en el área central de tu tablero (los espacios no necesitan estar conectados entre sí, solo en el área central)."},
+{objetive: "DA", description: "Dibuja cactus en todos los espacios de un área de 2x2 en tu tablero (los espacios no necesitan estar conectados entre sí, solo en la misma área de 2x2)."},
+{objetive: "DB", description: "Dibuja cactus en al menos 4 espacios adyacentes en una sola fila o columna de tu tablero (los espacios no necesitan estar conectados entre sí, solo en la misma fila / columna)."},
+{objetive: "DC", description: "Conecte al menos 3 espacios que contengan un Oasis a la misma red."},
+{objetive: "CA", description: "Gasta al menos 6 puntos de puente."},
+{objetive: "CB", description: "Cruza el mismo Cañón 3 veces con el mismo camino."},
+{objetive: "CD", description: "Dibuja un Cañón con ambos extremos conectados al borde del tablero que también pasa por el Área Central de tu tablero."},
+{objetive: "RA", description: "Tener una Ruta que cruce dos veces el mismo río."},
+{objetive: "RB", description: "Tener 3 estaciones adyacentes ortogonalmente a los espacios del río."},
+{objetive: "RC", description: "Conecta 2 salidas con una ruta que pasa por un río."},
+{objetive: "LA", description: "Tiene 2 salidas conectadas a través de un lago."},
+{objetive: "LB", description: "Tenga 4 espacios de lago en la misma fila o columna."},
+{objetive: "LC", description: "Tener un lago sin bordes rectos."},
+{objetive: "VA", description: "Tener una ruta en bucle alrededor de 4 y un volcán."},
+{objetive: "VB", description: "Conecta 2 salidas a través de un espacio que tenga lava."},
+{objetive: "VC", description: "Haz que Lava destruya 1 de tus rutas."},
+{objetive: "MA", description: "Tener un cráter con rutas en los 4 espacios adyacentes."},
+{objetive: "MB", description: "Conecta 2 cráteres con una ruta."},
+{objetive: "MC", description: "Haz que un cráter destruya una ruta."}]
